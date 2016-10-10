@@ -10,7 +10,7 @@ function createButtons(){
   button3 = select('#mode3');
   button4 = select('#mode4');
   button5 = select('#mode5');
-//
+
   button1.mousePressed(function(lol){
     changeMode(1)
   });
