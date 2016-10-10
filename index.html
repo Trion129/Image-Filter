@@ -9,7 +9,12 @@
 
 <body>
     <h1 class="Head">Image Filters</h1>
-    <span>Choose your own image: </span><input id="urlImage" placeholder="Enter url" type="text" style="width:50%;height:25px;" />
+    <span>Choose your own image: </span>
+    <span>
+        <input id="urlImage" placeholder="Enter url" type="text" style="width:350px;height:25px;" />
+        <input type="button" value="Submit" style="height:25px;" onclick="setup();"/>
+    </span>
+    
     <div class="buttons">
       <button id="mode1">Grayscale</button>
       <button id="mode2">Reddify</button>
