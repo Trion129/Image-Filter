@@ -1,20 +1,20 @@
-var Ourimage, TheirImage, filterMode = 0;
+var Ourimage, filterMode = 0;
 var button1, button2, button3, button4, button5;
 
 
 var urlImage = 'http://i.imgur.com/Zf5Im77.jpg';
 
 
-$('#urlImage').on('keyup', preload)
+$('#urlImage').on('input', preload)
 
-function preload() {  
-  if($('#urlImage').val()){        
+function preload() {
+  if($('#urlImage').val()){
     urlImage = $('#urlImage').val();
   }
-  OurImage = loadImage(urlImage);      
+  OurImage = loadImage(urlImage);
 }
 
-function renderImage() {  
+function renderImage() {
   image(OurImage, 0, 0, OurImage.width, OurImage.height, 0, 0,
     590, 320);
   loadPixels();
@@ -22,8 +22,8 @@ function renderImage() {
   updatePixels();
 }
 
-function setup() {     
-  var canvas = createCanvas(500,500);  
+function setup() {
+  var canvas = createCanvas(500,500);
   canvas.parent('myCanvas');
   createButtons();
   renderImage();

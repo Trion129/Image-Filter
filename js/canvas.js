@@ -1,6 +1,6 @@
 function applyFilter(pixels,filterMode){
   var d = pixelDensity();
-  var tempImageSize = 4 * (width * d) * (height * d);  
+  var tempImageSize = 4 * (width * d) * (height * d);
 
   switch(filterMode){
 
@@ -36,17 +36,14 @@ function applyFilter(pixels,filterMode){
       }
       break;
 
-    case 5: //Merge 'em all!!!!!'(Removed the part where we load the pixels of other image and using the same image to merge )
-      OurImage.loadPixels();
-      // YEAH!!
-      for(var i = 0;i < tempImageSize ; i += 4){        
-        pixels[i] = 0.5 * pixels[i] + 0.5 * OurImage.pixels[i];
-        pixels[i+1] = 0.5 * pixels[i+1] + 0.5 * OurImage.pixels[i+1];
-        pixels[i+2] = 0.5 * pixels[i+2] + 0.5 * OurImage.pixels[i+2];
+    case 5:  //Nevermind xD lets make a pen
+      for(var i = 0;i < tempImageSize;i += 4){
+        pixels[i] = pixels[i] - pixels[i]/5;
+        pixels[i+1] = pixels[i + 1] - pixels[i + 1]/5;
+        pixels[i+2] = pixels[i + 2] + pixels[i + 2]/5;
       }
+      break;
 
-      OurImage.updatePixels();
-      break;   
   }
   return pixels;
 }
